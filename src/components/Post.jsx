@@ -18,13 +18,11 @@ export function Post() {
       </header>
 
       <div className={styles.content}>
-        <p>
           <p>Fala pessoal 👋</p>
           <p>Finalmente finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻</p>
           <p>Acesse e deixe seu feedback <a href="">👉 devonlane.design</a></p>
           <p><a href="">#uiux </a></p>
           <p><a href="">#userexperience</a></p>
-        </p>
       </div>
 
       <form className={styles.commentForm}>
