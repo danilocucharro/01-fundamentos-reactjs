@@ -4,7 +4,44 @@ import { Sidebar } from './components/Sidebar'
 
 import styles from './App.module.css';
 
-import './global.css'
+import './global.css';
+
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/danilocucharro.png',
+      name: 'Danilo Cucharro',
+      role: 'Web Developer' 
+    },
+    content:[
+      { type: 'paragraph', content: 'Fala pessoal 👋' },
+      { type: 'paragraph', content: 'finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻' },
+      { type: 'paragraph', content: 'Acesse e deixe seu feedback' },
+      { type: 'link', content: '👉 devonlane.design' },
+      { type: 'link', content: '#uiux' },
+      { type: 'link', content:'#userexperience' }
+    ],
+    publishedAt: new Date('2024-02-06 08:34:00'),
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/diego3d.png',
+      name: 'Diego Fernandes',
+      role: 'CTO @ Rocketseat' 
+    },
+    content:[
+      { type: 'paragraph', content: 'Fala pessoal 👋' },
+      { type: 'paragraph', content: 'finalizei meu novo site/portfólio. Foi um baita desafio criar todo o design e codar na unha, mas consegui 💪🏻' },
+      { type: 'paragraph', content: 'Acesse e deixe seu feedback' },
+      { type: 'link', content: '👉 devonlane.design' },
+      { type: 'link', content: '#uiux' },
+      { type: 'link', content:'#userexperience' }
+    ],
+    publishedAt: new Date('2024-02-05 09:34:00'),
+  },
+]
 
 export function App() {
   return (
@@ -14,14 +51,15 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-        <Post 
-        author="Danilo Cucharro" 
-        content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, nam. Assumenda id commodi beatae. Doloremque doloribus explicabo, nostrum iste quasi ad reiciendis, repellat libero mollitia eaque dolore reprehenderit quae maiores?"
-        />
-        <Post 
-          author="Robson Souza"
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quae id perspiciatis corrupti voluptas, eligendi sunt quo consequuntur modi. Modi repellat aut cum veritatis ab laboriosam, doloremque harum earum ad?"
-        />
+          {posts.map(post => {
+            return (
+              <Post
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
+            )
+          })}
         </main>
       </div>
     </>
